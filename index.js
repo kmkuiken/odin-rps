@@ -13,7 +13,9 @@ function getComputerChoice() {
     }
 }
 
-function game(playerChoice, computerChoice) {
+
+
+function play(playerChoice, computerChoice) {
   //Player win = 1, player loss = 0, tie = 2
 
   if (playerChoice == "Rock") {
@@ -52,6 +54,20 @@ function game(playerChoice, computerChoice) {
 
       case "Scissors":
         return 2;
+    }
+  }
+}
+
+function game() {
+  let playerScore = 0;
+  let cpuScore = 0;
+  let gameCounter = 0;
+
+  while (gameCounter < 5) {
+    let result = play(prompt("Enter your selection, Rock, Paper, or Scissors"), getComputerChoice);
+
+    switch (result) {
+
     }
   }
 }
