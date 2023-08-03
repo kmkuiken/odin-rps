@@ -3,13 +3,13 @@ function getComputerChoice() {
 
     switch (choice){
         case 0:
-					return "Rock";
+					return "rock";
 
 				case 1:
-					return "Paper";
+					return "paper";
 
 				case 2:
-					return "Scissors";
+					return "scissors";
     }
 }
 
@@ -18,42 +18,42 @@ function getComputerChoice() {
 function play(playerChoice, computerChoice) {
   //Player win = 1, player loss = 0, tie = 2
 
-  if (playerChoice == "Rock") {
+  if (playerChoice == "rock") {
     switch (computerChoice) {
-      case "Rock":
+      case "rock":
         return 2;
       
-      case "Paper":
+      case "paper":
         return 0;
 
-      case "Scissors":
-        return 1;
+      case "scissors":
+        return 1
     }
   }
 
-  if (playerChoice == "Paper") {
+  if (playerChoice == "paper") {
     switch (computerChoice) {
-      case "Rock":
-        return 1;
+      case "rock":
+        return 1
       
-      case "Paper":
-        return 2;
+      case "paper":
+        return 2
 
-      case "Scissors":
-        return 0;
+      case "scissors":
+        return 0
     }
   }
 
-  if (playerChoice == "Scissors") {
+  if (playerChoice == "scissors") {
     switch (computerChoice) {
-      case "Rock":
-        return 0;
+      case "rock":
+        return 0
       
-      case "Paper":
-        return 1;
+      case "paper":
+        return 1
 
-      case "Scissors":
-        return 2;
+      case "scissors":
+        return 2
     }
   }
 }
@@ -64,10 +64,40 @@ function game() {
   let gameCounter = 0;
 
   while (gameCounter < 5) {
-    let result = play(prompt("Enter your selection, Rock, Paper, or Scissors"), getComputerChoice);
+    let result = play(prompt("Enter your selection, Rock, Paper, or Scissors").toLowerCase(), getComputerChoice());
 
     switch (result) {
+      case 2:
+        console.log("Tie");
+        break;
 
+      case 1:
+        console.log("You Win!");
+        playerScore++;
+        break;
+
+      case 0:
+        console.log("Sorry, you lose.");
+        cpuScore++;
+        break;
     }
+    gameCounter++;
+  }
+
+  if (playerScore > cpuScore) {
+    console.log(`You win! \n${playerScore} - ${cpuScore}`);
+    return;
+  }
+
+  if (playerScore < cpuScore) {
+    console.log(`You lose :( \n${playerScore} - ${cpuScore}`);
+    return;
+  }
+
+  if (playerScore == cpuScore) {
+    console.log(`You tied :| \n${playerScore} - ${cpuScore}`);
+    return;
   }
 }
+
+game()
