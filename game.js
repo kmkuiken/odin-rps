@@ -2,6 +2,8 @@ let playerScore = 0;
 let cpuScore = 0;
 const display = document.querySelector(".result");
 const score = document.querySelector(".score");
+const playerHand = document.querySelector(".player img");
+const cpuHand = document.querySelector(".cpu img");
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
@@ -63,6 +65,11 @@ function play(playerChoice, computerChoice) {
   }
 }
 
+function changeHand(playerChoice, cpuChoice) {
+  playerHand.src = `../images/${playerChoice}.svg`;
+  cpuHand.src = `../images/${cpuChoice}.svg`;
+}
+
 function game(playerChoice) {
   let cpuChoice = getComputerChoice();
   let result = play(playerChoice, cpuChoice);
@@ -71,18 +78,21 @@ function game(playerChoice) {
     case 2:
       display.textContent = `Tie. ${playerChoice} is the same as ${cpuChoice}`;
       score.textContent = `SCORE: ${playerScore} - ${cpuScore}`;
+      changeHand(playerChoice, cpuChoice);
       return;
 
     case 1:
       display.textContent = `You Win! ${playerChoice} beats ${cpuChoice}!`;
       playerScore++;
       score.textContent = `SCORE: ${playerScore} - ${cpuScore}`;
+      changeHand(playerChoice, cpuChoice);
       return;
 
     case 0:
       display.textContent = `Sorry, you lose. ${cpuChoice} beats ${playerChoice}.`;
       cpuScore++;
       score.textContent = `SCORE: ${playerScore} - ${cpuScore}`;
+      changeHand(playerChoice, cpuChoice);
       return;
   }
 
