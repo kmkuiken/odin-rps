@@ -58,31 +58,28 @@ function play(playerChoice, computerChoice) {
   }
 }
 
-function game() {
+function game(playerChoice) {
   let playerScore = 0;
   let cpuScore = 0;
-  let gameCounter = 0;
 
-  while (gameCounter < 5) {
-    let result = play(prompt("Enter your selection, Rock, Paper, or Scissors").toLowerCase(), getComputerChoice());
+  let result = play(playerChoice, getComputerChoice());
 
-    switch (result) {
-      case 2:
-        console.log("Tie");
-        break;
+  switch (result) {
+    case 2:
+      console.log("Tie");
+      break;
 
-      case 1:
-        console.log("You Win!");
-        playerScore++;
-        break;
+    case 1:
+      console.log("You Win!");
+      playerScore++;
+      break;
 
-      case 0:
-        console.log("Sorry, you lose.");
-        cpuScore++;
-        break;
-    }
-    gameCounter++;
+    case 0:
+      console.log("Sorry, you lose.");
+      cpuScore++;
+      break;
   }
+
 
   if (playerScore > cpuScore) {
     console.log(`You win! \n${playerScore} - ${cpuScore}`);
@@ -100,4 +97,10 @@ function game() {
   }
 }
 
-game()
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
+
+rock.addEventListener("click", game("rock"));
+paper.addEventListener("click", game("paper"));
+scissors.addEventListener("click", game("scissors"));
