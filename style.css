@@ -10,3 +10,37 @@ Off-White, #F7ECE1
   box-sizing: border-box;
   background-color: #242038;
 }
+
+.header, .main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.header h1, .header p{
+  color: #23967F;
+}
+
+.header h1 {
+  font-size: 48px;
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.header p {
+  font-size: 24px;
+  margin: 0;
+}
+
+.game {
+  display: flex;
+}
+
+.player, .cpu {
+  padding: 200px;
+  border-color: black;
+  border-style: solid;
+  margin: 26px;
+  background-color: #777DA7;
+}
