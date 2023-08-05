@@ -1,3 +1,8 @@
+let playerScore = 0;
+let cpuScore = 0;
+const display = document.querySelector(".result");
+const score = document.querySelector(".score");
+
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
 
@@ -59,48 +64,34 @@ function play(playerChoice, computerChoice) {
 }
 
 function game(playerChoice) {
-  let playerScore = 0;
-  let cpuScore = 0;
-
-  let result = play(playerChoice, getComputerChoice());
+  let cpuChoice = getComputerChoice();
+  let result = play(playerChoice, cpuChoice);
 
   switch (result) {
     case 2:
-      console.log("Tie");
-      break;
+      display.textContent = `Tie. ${playerChoice} is the same as ${cpuChoice}`;
+      score.textContent = `SCORE: ${playerScore} - ${cpuScore}`;
+      return;
 
     case 1:
-      console.log("You Win!");
+      display.textContent = `You Win! ${playerChoice} beats ${cpuChoice}!`;
       playerScore++;
-      break;
+      score.textContent = `SCORE: ${playerScore} - ${cpuScore}`;
+      return;
 
     case 0:
-      console.log("Sorry, you lose.");
+      display.textContent = `Sorry, you lose. ${cpuChoice} beats ${playerChoice}.`;
       cpuScore++;
-      break;
+      score.textContent = `SCORE: ${playerScore} - ${cpuScore}`;
+      return;
   }
 
-
-  if (playerScore > cpuScore) {
-    console.log(`You win! \n${playerScore} - ${cpuScore}`);
-    return;
-  }
-
-  if (playerScore < cpuScore) {
-    console.log(`You lose :( \n${playerScore} - ${cpuScore}`);
-    return;
-  }
-
-  if (playerScore == cpuScore) {
-    console.log(`You tied :| \n${playerScore} - ${cpuScore}`);
-    return;
-  }
 }
 
-const rock = document.querySelector('.rock');
-const paper = document.querySelector('.paper');
-const scissors = document.querySelector('.scissors');
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
 
-rock.addEventListener("click", game("rock"));
-paper.addEventListener("click", game("paper"));
-scissors.addEventListener("click", game("scissors"));
+rock.addEventListener("click", () => game("rock"));
+paper.addEventListener("click", () => game("paper"));
+scissors.addEventListener("click", () => game("scissors"));
