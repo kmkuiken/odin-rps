@@ -38,9 +38,41 @@ Off-White, #F7ECE1
 }
 
 .player, .cpu {
-  padding: 200px;
   border-color: black;
   border-style: solid;
   margin: 26px;
   background-color: #777DA7;
+}
+
+.game img {
+  height: 500px;
+  width: 500px;
+  padding: 50px;
+  background-color: #777DA7;
+}
+
+.player img {
+  transform: rotate(90deg);
+}
+
+.cpu img {
+  transform: scaleY(-1);
+  transform: rotate(270deg);
+}
+
+.selection {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.selection button {
+  background-color: #F7ECE1;
+  border-color: #F7ECE1;
+}
+
+.selection img {
+  width: 125px;
+  height: 125px;
+  background-color: #F7ECE1;
 }
