@@ -85,8 +85,8 @@ function game(playerChoice) {
 
   // Activates hand motion animation then removes it so it can be played again when
   // the function is called again
-  playerHand.style.animation = "moveUpDown 1.5s";
-  cpuHand.style.animation = "moveUpDown 1.5s";
+  playerHand.style.animation = "moveUpDown 1.1s";
+  cpuHand.style.animation = "moveUpDown 1.1s";
   playerHand.onanimationend = () => {
     playerHand.style.setProperty("animation", "initial");
   };
@@ -117,7 +117,7 @@ function game(playerChoice) {
         changeHand(playerChoice, cpuChoice);
         return;
     }
-  }, 1450);
+  }, 1000);
 }
 
 // Event listener for clicking each selection
