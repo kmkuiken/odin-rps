@@ -81,7 +81,8 @@ function game(playerChoice) {
   let cpuChoice = getComputerChoice();
   let result = play(playerChoice, cpuChoice);
   
-  changeHand("rock", "rock");
+  playerHand.src = "../images/rock.svg";
+  cpuHand.src = "../images/rock.svg";
 
   // Activates hand motion animation then removes it so it can be played again when
   // the function is called again
