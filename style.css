@@ -67,6 +67,20 @@ h1, p {
   transform: scaleX(-1) rotate(90deg);
 }
 
+/* Moves hand up 3 times and down 2 times to simulate the beginning of
+   traditional rock paper scissors. */
+@keyframes moveUpDown {
+  0%, 19%, 38%, 57%, 76%, 100% {
+    padding-left: 50px;
+  }
+  9.5%, 47.5%, 85.5% {
+    padding-left: 0;
+  }
+  28.5%, 66.5% {
+    padding-left: 100px;
+  }
+}
+
 .selection {
   display: flex;
   gap: 50px;

@@ -4,6 +4,13 @@ const display = document.querySelector(".result");
 const score = document.querySelector(".score");
 const playerHand = document.querySelector(".player img");
 const cpuHand = document.querySelector(".cpu img");
+const rock = document.querySelector(".rock");
+const rockPhoto = document.querySelector(".rock img");
+const paper = document.querySelector(".paper");
+const paperPhoto = document.querySelector(".paper img");
+const scissors = document.querySelector(".scissors");
+const scissorsPhoto = document.querySelector(".scissors img");
+
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
@@ -73,6 +80,17 @@ function changeHand(playerChoice, cpuChoice) {
 function game(playerChoice) {
   let cpuChoice = getComputerChoice();
   let result = play(playerChoice, cpuChoice);
+  
+  // Activates hand motion animation then removes it so it can be played again when
+  // the function is called again
+  playerHand.style.animation = "moveUpDown 2s";
+  cpuHand.style.animation = "moveUpDown 2s";
+  playerHand.onanimationend = () => {
+    playerHand.style.setProperty("animation", "initial");
+  };
+  cpuHand.onanimationend = () => {
+    cpuHand.style.setProperty("animation", "initial");
+  };
 
   switch (result) {
     case 2:
@@ -97,13 +115,6 @@ function game(playerChoice) {
   }
 
 }
-
-const rock = document.querySelector(".rock");
-const rockPhoto = document.querySelector(".rock img");
-const paper = document.querySelector(".paper");
-const paperPhoto = document.querySelector(".paper img");
-const scissors = document.querySelector(".scissors");
-const scissorsPhoto = document.querySelector(".scissors img");
 
 // Event listener for clicking each selection
 rock.addEventListener("click", () => game("rock"));
