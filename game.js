@@ -99,8 +99,11 @@ function game(playerChoice) {
 }
 
 const rock = document.querySelector(".rock");
+const rockPhoto = document.querySelector(".rock img");
 const paper = document.querySelector(".paper");
+const paperPhoto = document.querySelector(".paper img");
 const scissors = document.querySelector(".scissors");
+const scissorsPhoto = document.querySelector(".scissors img");
 
 // Event listener for clicking each selection
 rock.addEventListener("click", () => game("rock"));
@@ -108,8 +111,32 @@ paper.addEventListener("click", () => game("paper"));
 scissors.addEventListener("click", () => game("scissors"));
 
 // Mouse over effect for the rock selector, changing the color to orange when over top
-rock.addEventListener("mouseover", () => 
-  rock.style.cssText = "background-color: #D5573B; border-color: #D5573B;");
-rock.addEventListener("mouseleave", () =>
-  rock.style.cssText = "background-color: #F7ECE1; border-color: #F7ECE1;");
+rock.addEventListener("mouseover", () => {
+  rock.style.cssText = "background-color: #D5573B; border-color: #D5573B;";
+  rockPhoto.style.cssText = "background-color: #D5573B; border-color: #D5573B;";
+});
+rock.addEventListener("mouseleave", () => {
+  rock.style.cssText = "background-color: #F7ECE1; border-color: #F7ECE1;";
+  rockPhoto.style.cssText = "background-color: #F7ECE1; border-color: #F7ECE1;";
+});
+
+// Mouse over effect for paper
+paper.addEventListener("mouseover", () => {
+  paper.style.cssText = "background-color: #D5573B; border-color: #D5573B;";
+  paperPhoto.style.cssText = "background-color: #D5573B; border-color: #D5573B;";
+});
+paper.addEventListener("mouseleave", () => {
+  paper.style.cssText = "background-color: #F7ECE1; border-color: #F7ECE1;";
+  paperPhoto.style.cssText = "background-color: #F7ECE1; border-color: #F7ECE1;";
+});
+
+// Mouse over effect for scissors
+scissors.addEventListener("mouseover", () => {
+  scissors.style.cssText = "background-color: #D5573B; border-color: #D5573B;";
+  scissorsPhoto.style.cssText = "background-color: #D5573B; border-color: #D5573B;";
+});
+scissors.addEventListener("mouseleave", () => {
+  scissors.style.cssText = "background-color: #F7ECE1; border-color: #F7ECE1;";
+  scissorsPhoto.style.cssText = "background-color: #F7ECE1; border-color: #F7ECE1;";
+});
 

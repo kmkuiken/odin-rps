@@ -11,6 +11,14 @@ Off-White, #F7ECE1
   background-color: #242038;
 }
 
+button {
+  outline: none;
+}
+
+button:active {
+  border-style: outset;
+}
+
 .header, .main {
   display: flex;
   align-items: center;
