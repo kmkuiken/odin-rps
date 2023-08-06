@@ -73,6 +73,19 @@ function play(playerChoice, computerChoice) {
 }
 
 function changeHand(playerChoice, cpuChoice) {
+  switch (playerChoice) {
+    case "rock":
+      playerHand.src = "https://kmkuiken.github.io/odin-rps/images/rock.svg";
+      break;
+
+    case "paper":
+      playerHand.src = "https://kmkuiken.github.io/odin-rps/images/paper.svg";
+      break;
+
+    case "scissors":
+      playerHand.src = "https://kmkuiken.github.io/odin-rps/images/scissors.svg";
+  }
+  
   playerHand.src = `https://kmkuiken.github.io/odin-rps/images/${playerChoice}.svg`;
   cpuHand.src = `https://kmkuiken.github.io/odin-rps/images/${cpuChoice}.svg`;
 }
