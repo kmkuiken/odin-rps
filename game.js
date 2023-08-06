@@ -76,20 +76,20 @@ function game(playerChoice) {
 
   switch (result) {
     case 2:
-      display.textContent = `Tie. ${playerChoice} is the same as ${cpuChoice}`;
+      display.textContent = "Tie";
       score.textContent = `SCORE: ${playerScore} - ${cpuScore}`;
       changeHand(playerChoice, cpuChoice);
       return;
 
     case 1:
-      display.textContent = `You Win! ${playerChoice} beats ${cpuChoice}!`;
+      display.textContent = "You Win!";
       playerScore++;
       score.textContent = `SCORE: ${playerScore} - ${cpuScore}`;
       changeHand(playerChoice, cpuChoice);
       return;
 
     case 0:
-      display.textContent = `Sorry, you lose. ${cpuChoice} beats ${playerChoice}.`;
+      display.textContent = "Sorry, you lose.";
       cpuScore++;
       score.textContent = `SCORE: ${playerScore} - ${cpuScore}`;
       changeHand(playerChoice, cpuChoice);
@@ -102,6 +102,14 @@ const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
 
+// Event listener for clicking each selection
 rock.addEventListener("click", () => game("rock"));
 paper.addEventListener("click", () => game("paper"));
 scissors.addEventListener("click", () => game("scissors"));
+
+// Mouse over effect for the rock selector, changing the color to orange when over top
+rock.addEventListener("mouseover", () => 
+  rock.style.cssText = "background-color: #D5573B; border-color: #D5573B;");
+rock.addEventListener("mouseleave", () =>
+  rock.style.cssText = "background-color: #F7ECE1; border-color: #F7ECE1;");
+

@@ -18,7 +18,7 @@ Off-White, #F7ECE1
   padding: 12px;
 }
 
-.header h1, .header p{
+h1, p {
   color: #23967F;
 }
 
@@ -74,4 +74,8 @@ Off-White, #F7ECE1
   width: 125px;
   height: 125px;
   background-color: #F7ECE1;
+}
+
+.info p {
+  font-size: 24px;
 }
