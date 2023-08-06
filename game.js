@@ -81,6 +81,8 @@ function game(playerChoice) {
   let cpuChoice = getComputerChoice();
   let result = play(playerChoice, cpuChoice);
   
+  changeHand("rock", "rock");
+
   // Activates hand motion animation then removes it so it can be played again when
   // the function is called again
   playerHand.style.animation = "moveUpDown 1.5s";
