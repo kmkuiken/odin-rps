@@ -83,8 +83,8 @@ function game(playerChoice) {
   
   // Activates hand motion animation then removes it so it can be played again when
   // the function is called again
-  playerHand.style.animation = "moveUpDown 2s";
-  cpuHand.style.animation = "moveUpDown 2s";
+  playerHand.style.animation = "moveUpDown 1.5s";
+  cpuHand.style.animation = "moveUpDown 1.5s";
   playerHand.onanimationend = () => {
     playerHand.style.setProperty("animation", "initial");
   };
@@ -92,28 +92,30 @@ function game(playerChoice) {
     cpuHand.style.setProperty("animation", "initial");
   };
 
-  switch (result) {
-    case 2:
-      display.textContent = "Tie";
-      score.textContent = `SCORE: ${playerScore} - ${cpuScore}`;
-      changeHand(playerChoice, cpuChoice);
-      return;
 
-    case 1:
-      display.textContent = "You Win!";
-      playerScore++;
-      score.textContent = `SCORE: ${playerScore} - ${cpuScore}`;
-      changeHand(playerChoice, cpuChoice);
-      return;
+  setTimeout( () => {
+    switch (result) {
+      case 2:
+        display.textContent = "Tie";
+        score.textContent = `SCORE: ${playerScore} - ${cpuScore}`;
+        changeHand(playerChoice, cpuChoice);
+        return;
 
-    case 0:
-      display.textContent = "Sorry, you lose.";
-      cpuScore++;
-      score.textContent = `SCORE: ${playerScore} - ${cpuScore}`;
-      changeHand(playerChoice, cpuChoice);
-      return;
-  }
+      case 1:
+        display.textContent = "You Win!";
+        playerScore++;
+        score.textContent = `SCORE: ${playerScore} - ${cpuScore}`;
+        changeHand(playerChoice, cpuChoice);
+        return;
 
+      case 0:
+        display.textContent = "Sorry, you lose.";
+        cpuScore++;
+        score.textContent = `SCORE: ${playerScore} - ${cpuScore}`;
+        changeHand(playerChoice, cpuChoice);
+        return;
+    }
+  }, 1450);
 }
 
 // Event listener for clicking each selection
