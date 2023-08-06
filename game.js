@@ -73,8 +73,8 @@ function play(playerChoice, computerChoice) {
 }
 
 function changeHand(playerChoice, cpuChoice) {
-  playerHand.src = `../images/${playerChoice}.svg`;
-  cpuHand.src = `../images/${cpuChoice}.svg`;
+  playerHand.src = `/images/${playerChoice}.svg`;
+  cpuHand.src = `/images/${cpuChoice}.svg`;
 }
 
 function game(playerChoice) {
