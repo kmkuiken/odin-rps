@@ -23,7 +23,7 @@ button:active {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 12px;
+  padding: 1vh;
 }
 
 h1, p {
@@ -33,7 +33,7 @@ h1, p {
 .header h1 {
   font-size: 48px;
   margin-top: 0;
-  margin-bottom: 4px;
+  margin-bottom: .5vh;
 }
 
 .header p {
@@ -48,14 +48,14 @@ h1, p {
 .player, .cpu {
   border-color: black;
   border-style: solid;
-  margin: 26px;
+  margin: 3vw;
   background-color: #777DA7;
 }
 
 .game img {
-  height: 500px;
-  width: 500px;
-  padding: 50px;
+  height: 35vw;
+  width: 35vw;
+  padding: 5vw;
   background-color: #777DA7;
 }
 
@@ -71,15 +71,15 @@ h1, p {
    traditional rock paper scissors. */
 @keyframes moveUpDown {
   0%, 100% {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 3.5vw;
+    padding-right: 3.5vw;
   }
   17%, 51%, 85% {
     padding-left: 0;
-    padding-right: 100px;
+    padding-right: 7vw;
   }
   34%, 68% {
-    padding-left: 100px;
+    padding-left: 7vw;
     padding-right: 0;
   }
 }
@@ -96,8 +96,8 @@ h1, p {
 }
 
 .selection img {
-  width: 125px;
-  height: 125px;
+  width: 10vw;
+  height: 10vw;
   background-color: #F7ECE1;
 }
 
