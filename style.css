@@ -57,8 +57,8 @@ p {
 }
 
 .game img {
-  height: 35vw;
-  width: 35vw;
+  height: 25vw;
+  width: 25vw;
   padding: 5vw;
   background-color: inherit;
 }
